@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>~/startpage</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="darkstyle.css">
 
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +18,7 @@
 <body>
     <header>
         <div id="img">
-            <img src="image.gif" />
+            <span id="span"></span>
         </div>
     </header>
 
@@ -36,35 +36,39 @@
             </div>
             <div id="links">
                 <section>
-                    <h3>section header</h3>
+                    <h3>social</h3>
                         <ul>
-                            <li><a href="https://example.com">website text</a></li>
-                            <li><a href="https://example.com">website text</a></li>
-                            <li><a href="https://example.com">website text</a></li>
+                            <li><a href="https://www.reddit.com">reddit</a></li>
+                            <li><a href="https://www.twitter.com">twitter</a></li>
+                            <li><a href="https://www.pinterest.nz">pinterest</a></li>
+                            <li><a href="https://www.facebook.com">facebook</a></li>
                         </ul>
                 </section>
                 <section>
-                    <h3>section header</h3>
+                    <h3>youtube/video</h3>
                         <ul>
-                            <li><a href="https://example.com">website text</a></li>
-                            <li><a href="https://example.com">website text</a></li>
-                            <li><a href="https://example.com">website text</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=WL">watch later</a></li>
+                            <li><a href="https://www.youtube.com/feed/subscriptions">subscriptions</a></li>
+                            <li><a href="https://www.youtube.com/">recomendations</a></li>
+                            <li><a href="https://www.odysee.com/">odysee</a></li>
                         </ul>
                 </section>
                 <section>
-                    <h3>section header</h3>
+                    <h3>useful sites</h3>
                         <ul>
-                            <li><a href="https://example.com">website text</a></li>
-                            <li><a href="https://example.com">website text</a></li>
-                            <li><a href="https://example.com">website text</a></li>
+                            <li><a href="https://www.trademe.co.nz">trade me</a></li>
+                            <li><a href="https://www.gmail.com">gmail</a></li>
+                            <li><a href="https://globe.adsbexchange.com/">ADSB exchange</a></li>
+                            <li><a href="https://www.notion.so">notion</a></li>
                         </ul>
                 </section>
                 <section>
-                    <h3>section header</h3>
+                    <h3>other</h3>
                         <ul>
-                            <li><a href="https://example.com">website text</a></li>
-                            <li><a href="https://example.com">website text</a></li>
-                            <li><a href="https://example.com">website text</a></li>
+                            <li><a href="https://kdata1.com/2020/05/slope/">slope</a></li>
+                            <li><a href="https://www.roblox.com">roblox</a></li>
+                            <li><a href="https://www.qrz.com">QRZ.com</a></li>
+                            <li><a href="https://news.google.com">google news</a></li>
                         </ul>
                 </section>
             </div>
@@ -77,15 +81,15 @@
         // ----- CHANGE THESE VARIABLES
 
         // Do you want to show the weather?
-        const weather = true;
+        const weather = false;
         // Do you want animations?
         const animated = true;
 
         // Read the documentation for setting the weather API key
-        const apiKey = "[API KEY]";
-        const lat = 40.7127861;
-        const lon = -74.0134275;
-        const units = "imperial";
+        const apiKey = "c05abe7560afe540fb2ea8d96fdeabf9";
+        const lat = -39.483;
+        const lon = -176.917;
+        const units = "metric";
 
         // ----- DON'T TOUCH ANYTHING BELOW THIS UNLESS YOU KNOW WHAT YOU'RE DOING
 
@@ -150,7 +154,7 @@
             function playAnimation() {
                 var tl = anime.timeline({
                     easing: "easeInOutExpo",
-                    duration: 2000,
+                    duration: 1500,
                 });
 
                 tl.add({
@@ -181,6 +185,20 @@
                 playAnimation();
             }
         }
+// clock
+var span = document.getElementById('span');
+
+function time() {
+  var d = new Date();
+  var s = d.getSeconds();
+  var m = d.getMinutes();
+  var h = d.getHours();
+  span.textContent = 
+    ("0" + h).substr(-2) + ":" + ("0" + m).substr(-2);
+}
+setInterval(() => console.log(new Date().toLocaleTimeString()),1000);
+
+setInterval(time, 1000);
     </script>
 </body>
 
